@@ -35,10 +35,12 @@ func main() {
 	}
 	defer f.Close()
 	s = bufio.NewScanner(f)
+	// Convert each line of input.txt to a single entry of lines
 	for s.Scan() {
 		lines = append(lines, s.Text())
 	}
 
+	// Iterate over every slope
 	for _, slope := range slopes {
 		trees := countTrees(slope)
 		slopeResultProduct *= trees
@@ -55,13 +57,16 @@ func countTrees(slo slope) int {
 	)
 
 	for true {
+		// Increase posX and posY by the given slopes x and y
 		posX += slo.x
 		posY += slo.y
 
+		// reached end of lines
 		if posY >= len(lines) {
 			break
 		}
 
+		// "loop around" line as they have a repeating pattern
 		posX %= len(lines[posY])
 
 		if lines[posY][posX] == '#' {
