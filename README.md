@@ -1,2 +1,2 @@
 # AdventOfCode-go
-My solutions of AdventOfCode in Golang
+My solutions of AdventOfCode 2020 in Golang
