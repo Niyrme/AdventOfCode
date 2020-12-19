@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func part1() int {
+func part1() {
 	f, err := os.Open("./input.txt")
 	if err != nil {
 		log.Fatalf("Error reading input file! %s", err.Error())
@@ -31,9 +31,8 @@ func part1() int {
 	for _, i := range t {
 		for _, j := range t {
 			if i+j == 2020 {
-				return i * j
+				log.Println(i * j)
 			}
 		}
 	}
-	return -1
 }
