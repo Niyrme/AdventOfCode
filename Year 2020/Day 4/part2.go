@@ -6,7 +6,6 @@ import (
 	"strings"
 )
 
-// Currently boken
 func validatePassportPart2(passport []string) (valid bool) {
 	valid = true
 
@@ -44,7 +43,9 @@ func validatePassportPart2(passport []string) (valid bool) {
 		// data[1] == field value
 		switch data[0] {
 		case "byr":
+			fallthrough
 		case "iyr":
+			fallthrough
 		case "eyr":
 			// check byr, iyr or eyr
 			if !checkYrs(data[0], data[1]) {
